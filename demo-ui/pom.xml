@@ -40,10 +40,6 @@
             <artifactId>demo-services</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.vaadin.addon</groupId>
-            <artifactId>vaadin-charts</artifactId>
-        </dependency>
-        <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
         </dependency>

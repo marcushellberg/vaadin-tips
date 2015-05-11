@@ -57,12 +57,6 @@
             </dependency>
 
             <dependency>
-                <groupId>com.vaadin.addon</groupId>
-                <artifactId>vaadin-charts</artifactId>
-                <version>${vaadin.charts.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>3.0.1</version>

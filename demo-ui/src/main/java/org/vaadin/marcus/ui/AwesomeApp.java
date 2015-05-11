@@ -58,7 +58,6 @@ public class AwesomeApp extends HorizontalLayout {
         addView(OrdersView.class);
         addView(AsyncOrdersView.class);
         addView(LazyOrdersView.class);
-        addView(ChartView.class);
         addView(FormView.class);
         addView(SlowRenderingView.class);
         addView(HeapDestroyerView.class);
