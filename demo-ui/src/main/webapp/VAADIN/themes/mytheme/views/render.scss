@@ -1,0 +1,26 @@
+@mixin render {
+  .order-layout {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    .v-label {
+      padding: 5px;
+    }
+
+    b {
+      font-weight: 500;
+    }
+
+    .order-id {
+      @include valo-gradient();
+      border-bottom: 1px solid #ddd;
+      font-weight: 300;
+    }
+
+    .order-total {
+      float: right;
+    }
+  }
+}
