@@ -12,7 +12,7 @@ public class SlowRenderingView extends VerticalSpacedLayout implements View {
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
         OrderService.get()
-                .fetchOrders(0, 100)
-                .forEach(order -> addComponent(new QuickOrderLayout(order)));
+                .fetchOrders(0, 200)
+                .forEach(order -> addComponent(new OrderLayout(order)));
     }
 }

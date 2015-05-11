@@ -23,7 +23,7 @@ public class RenderingSpeedTest extends TestBenchTestCase {
     public void testRenderingSpeed() {
         mainViewPO.$(ButtonElement.class).caption("Slow rendering view").first().click();
 
-        int maxAllowedRenderTime = 550;
+        int maxAllowedRenderTime = 1000;
         long renderTime = mainViewPO.testBench().timeSpentRenderingLastRequest();
         assertTrue("Render took " + renderTime + "ms, max allowed is " + maxAllowedRenderTime + "ms", renderTime < maxAllowedRenderTime);
     }
