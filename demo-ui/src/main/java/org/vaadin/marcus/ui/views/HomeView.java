@@ -4,7 +4,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Label;
-import org.vaadin.marcus.components.VerticalSpacedLayout;
+import org.vaadin.marcus.ui.components.VerticalSpacedLayout;
 import org.vaadin.marcus.util.CurrentUser;
 import org.vaadin.marcus.util.MyTheme;
 import org.vaadin.marcus.util.ViewConfig;

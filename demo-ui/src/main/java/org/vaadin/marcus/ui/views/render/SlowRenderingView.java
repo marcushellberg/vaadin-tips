@@ -2,7 +2,7 @@ package org.vaadin.marcus.ui.views.render;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
-import org.vaadin.marcus.components.VerticalSpacedLayout;
+import org.vaadin.marcus.ui.components.VerticalSpacedLayout;
 import org.vaadin.marcus.service.OrderService;
 import org.vaadin.marcus.util.ViewConfig;
 

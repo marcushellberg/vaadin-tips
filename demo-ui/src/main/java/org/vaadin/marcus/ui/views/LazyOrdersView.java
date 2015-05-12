@@ -5,7 +5,7 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 import org.vaadin.marcus.util.MyTheme;
-import org.vaadin.marcus.components.OrdersGrid;
+import org.vaadin.marcus.ui.components.OrdersGrid;
 import org.vaadin.marcus.service.OrderService;
 import org.vaadin.marcus.util.ViewConfig;
 import org.vaadin.viritin.LazyList;

@@ -8,12 +8,12 @@ import java.lang.annotation.Target;
 /**
  * Annotation for easily collecting View meta info. Less typos, more awesome.
  */
-@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface ViewConfig {
-    enum CreationMode {ALWAYS_NEW, LAZY, EAGER}
+    enum CreateMode {ALWAYS_NEW, LAZY_INIT, EAGER_INIT}
 
     String uri();
     String displayName();
-    CreationMode create() default CreationMode.ALWAYS_NEW;
+    CreateMode createMode() default CreateMode.ALWAYS_NEW;
 }

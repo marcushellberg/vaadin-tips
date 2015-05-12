@@ -10,7 +10,7 @@ import org.vaadin.marcus.util.ViewConfig;
 @ViewConfig(
         uri="heap-destroyer",
         displayName = "Heap Destroyer",
-        create = ViewConfig.CreationMode.LAZY)
+        createMode = ViewConfig.CreateMode.LAZY_INIT)
 public class HeapDestroyerView extends VerticalLayout implements View {
 
     public static final int BIGNUM = 10000;

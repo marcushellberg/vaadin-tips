@@ -3,6 +3,7 @@ package org.vaadin.marcus.entity;
 import com.google.common.collect.Lists;
 import org.joda.time.DateTime;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -61,5 +62,10 @@ public class Order {
                                 * lineItem.getProduct().getPrice()
                                 * (1-lineItem.getDiscount()))
                 .sum();
+    }
+
+    public double getProgress(){
+        List<Status> statuses = Arrays.asList(Status.values());
+        return ((double) statuses.indexOf(getStatus())+1) / statuses.size();
     }
 }

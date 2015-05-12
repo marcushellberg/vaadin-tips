@@ -70,11 +70,11 @@ public class AwesomeApp extends HorizontalLayout {
     private void addView(Class<? extends View> viewClass) {
         ViewConfig viewConfig = viewClass.getAnnotation(ViewConfig.class);
 
-        switch (viewConfig.create()) {
+        switch (viewConfig.createMode()) {
             case ALWAYS_NEW:
                 navigator.addView(viewConfig.uri(), viewClass);
                 break;
-            case LAZY:
+            case LAZY_INIT:
                 navigator.addProvider(new LazyProvider(viewConfig.uri(), viewClass));
                 break;
             case EAGER:

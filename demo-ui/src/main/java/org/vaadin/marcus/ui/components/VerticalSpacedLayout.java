@@ -1,4 +1,4 @@
-package org.vaadin.marcus.components;
+package org.vaadin.marcus.ui.components;
 
 import com.vaadin.ui.VerticalLayout;
 
