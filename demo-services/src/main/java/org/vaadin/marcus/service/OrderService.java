@@ -12,6 +12,7 @@ import org.vaadin.marcus.entity.Product;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.Executors;
 
 public class OrderService {
@@ -63,6 +64,7 @@ public class OrderService {
 
     /**
      * Returns a max of 45 (LazyList default page size) orders starting at the given index.
+     *
      * @param startIndex
      * @return
      */
@@ -77,6 +79,7 @@ public class OrderService {
 
     /**
      * Returns a slice of orders
+     *
      * @param startIndex
      * @param num
      * @return
@@ -95,6 +98,7 @@ public class OrderService {
 
     /**
      * Save a new order
+     *
      * @param order
      */
     public void saveOrder(Order order) {
@@ -107,6 +111,7 @@ public class OrderService {
 
     /**
      * Generates some random orders
+     *
      * @return
      */
     private LinkedList<Order> initOrders() {
@@ -123,6 +128,9 @@ public class OrderService {
         return orders;
     }
 
+    public Order findById(UUID uuid) {
+        return orders.stream().filter(order -> order.getId().equals(uuid)).findFirst().orElse(null);
+    }
 
     private Order.Status getRandomStatus() {
         Order.Status[] statuses = Order.Status.values();

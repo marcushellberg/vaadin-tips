@@ -15,11 +15,9 @@ public class LineItemConverter implements Converter<String, List> {
 
     @Override
     public String convertToPresentation(List value, Class<? extends String> targetType, Locale locale) throws ConversionException {
-
-        List<LineItem> lineItems = value;
-        return String.join(", ", lineItems
+        return String.join(", ", ((List<LineItem>)value)
                 .stream()
-                .map(lineItem -> lineItem.getQuantity() + " x " + lineItem.getProduct().getName())
+                .map(LineItem::toString)
                 .collect(Collectors.toList()));
     }
 

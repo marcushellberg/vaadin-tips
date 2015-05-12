@@ -37,4 +37,9 @@ public class LineItem {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
+
+    @Override
+    public String toString() {
+        return getQuantity() + " x " + getProduct();
+    }
 }

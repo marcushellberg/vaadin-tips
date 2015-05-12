@@ -77,7 +77,7 @@ public class AwesomeApp extends HorizontalLayout {
             case LAZY_INIT:
                 navigator.addProvider(new LazyProvider(viewConfig.uri(), viewClass));
                 break;
-            case EAGER:
+            case EAGER_INIT:
                 try {
                     navigator.addView(viewConfig.uri(), viewClass.newInstance());
                 } catch (Exception e) {
