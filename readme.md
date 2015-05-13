@@ -189,7 +189,7 @@ On top of the more low-level unit tests, it's good to write some broader regress
 
 `FormRegressionTest` shows an example of a test that fills in our order form and submits it. TestBench also allows us to measure performance. In `RenderingSpeedTest` we have built a test that ensures a view is rendered quicker than a given threshold. 
 
-**Note** Vaadin TestBench is a commercial add-on for Vaadin. You can obtain free licenses for non-profit use on our web page. There is also a 30 day trial available. 
+**Note** Vaadin TestBench is a commercial add-on for Vaadin. You can obtain free licenses for non-profit use on our web page. There is also a 30 day trial available. In order to run the tests in this project you'll need to have [Firefox ESR](https://www.mozilla.org/en-US/firefox/organizations/all/) installed. 
 
 
 ## Optimization
