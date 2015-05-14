@@ -10,6 +10,9 @@ public class FieldGroupUtil {
 
     /**
      * Improves validation UX and enables/disables save/reset buttons depending on FieldGroup state.
+     *
+     * NOTE: This is not a fully complete/foolproof version. Please see AbstractForm, MBeanFieldGroup, and MTextField
+     * Viritin for a more complete solution. https://github.com/viritin/viritin
      */
     public static void improveUX(FieldGroup fieldGroup, Button saveButton, Button clearButton) {
 
