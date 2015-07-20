@@ -171,6 +171,8 @@ You can see one very simple MVP example in `FormView`/`FormPresenter` (`Order` i
 
 The actual implementation is in my opinion less important than the fact that you keep the concerns separated.
 
+Be sure to read [this excellent article on using MVP and Vaadin](https://vaadin.com/blog/-/blogs/is-mvp-a-best-practice-) written by our main architect at Vaadin. 
+
 ## Testing
 
 There are a few levels of testing that we can do with our Vaadin application. Here, we'll look at unit/integration testing and regression testing. 
