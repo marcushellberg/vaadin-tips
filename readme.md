@@ -78,6 +78,13 @@ In general, I prefer directly extending a component to keep things simple and li
 
 One often overlooked feature of the Vaadin layouts is `setMargin` and `setSpacing`. In most cases, turning these on will give you a much more visually pleasing result, as all your components aren't squished together. In fact, I use this so often that I created a custom `VerticalSpacedLayout` that defaults to having them enabled. 
 
+### Sizing and positioning
+Vaadin has a very powerful layout engine. If you understand how it works, you will have a very powerful tool for creating fluid layouts, but used wrong it will cause a lot of headaches. 
+
+There are two different sizes you need to take into account when working with the default Vaadin layouts (Vertical, Horizontal, Grid): the size of a component and the size of the layout slot it is in. A component's size, what you get when you call `setSize()` is the size of the component in relation to the layout slot the component is in. The size of the layout slot is determined by calling `setExpandRatio()` on the containing layout. ExpandRatio will determine how any unused space should be divided between the components. If you do not specify any values, all slots will be equally sized. The position of a component is also relative to the slot it is in.
+
+Another common mistake I see in Vaadin projects is having relatively sized components inside layouts without a defined size. So if you for have a VerticalLayout that by default has an undefined height (it will grow as needed with the content), you cannot put a component with a 100% height inside of it. Vaadin will not be able to calculate 100% of null, so the component will not be shown. You can easily locate these types of issues by running your application with the debug window open (append `?debug` to your application URL) and runnin the analyze layouts tool.
+
 ## Theme
 
 Vaadin comes with a powerful Sass based theme builder called Valo. Valo allows you to customize the look and feel of your application by configuring a set of high-level parameters. You can make large modifications to your application with just a single change, as unspecified values will be automatically populated with reasonable values. For instance, if you change the background color to a dark color, Valo will change text and highlight colors to a lighter color to ensure sufficient contrast. 

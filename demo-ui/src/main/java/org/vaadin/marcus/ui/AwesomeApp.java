@@ -55,6 +55,7 @@ public class AwesomeApp extends HorizontalLayout {
 
     private void registerViews() {
         addView(HomeView.class);
+        addView(LayoutView.class);
         addView(OrdersView.class);
         addView(AsyncOrdersView.class);
         addView(LazyOrdersView.class);

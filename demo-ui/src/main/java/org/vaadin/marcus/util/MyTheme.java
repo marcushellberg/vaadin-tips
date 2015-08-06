@@ -17,4 +17,6 @@ public class MyTheme extends ValoTheme {
     public static final String ORDER_LAYOUT = "order-layout";
     public static final String ORDER_ID = "order-id";
     public static final String ORDER_TOTAL = "order-total";
+
+    public static final String LAYOUT_VIEW = "layout-view";
 }
