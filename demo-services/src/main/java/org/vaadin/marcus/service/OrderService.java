@@ -38,9 +38,9 @@ public class OrderService {
 
     private List<Product> createProducts() {
         return Lists.newArrayList(
-                new Product("Apple Watch Sport", 399),
-                new Product("Apple Watch", 599),
-                new Product("Apple Watch Gold", 9999));
+                new Product("Apple", 1),
+                new Product("Orange", 2),
+                new Product("Banana", 3));
     }
 
     /**

@@ -30,7 +30,7 @@ Once the user is logged in, you want to call `navigator.navigateTo(navigator.get
 
 ### Use constants for View names
 
-Define your view names in constants to avoid making typos. In this project, I created a custom annotation `ViewConfig` that I used to store the view name, display name (for the menu and page title) and the creation modes (I'll cover creation styles shortly). The main thing to keep in mind is that *you do not want to be typing view names by hand in every place you use them.*
+Define your view names in constants to avoid making typos. In this project, I created a custom annotation `ViewConfig` that I used to store the view name, display name (for the menu and page title) and the creation modes (I'll cover creation modes shortly). The main thing to keep in mind is that **you do not want to be typing view names by hand in every place you use them.**
  
 See `OrdersView` for an example use of how I've used the `ViewConfig` annotation. The metadata is then used in `AwesomeApp.addView` to both register the view to the `Navigator` and to add it to the navigation bar.
 
@@ -41,7 +41,7 @@ When registering a view, be very careful how you do it. Doing it wrong may cause
 1. `navigator.addView("viewname", View.class)`
 2. `navigator.addView("viewname", new View())`
 
-The difference between these, is that #1 will always give you a new instance of a View when you navigate to it, whereas #2 always returns the same instance. **Unless you have very compelling reasons to use #2, you should always use #1**. If you use #2, the Navigator needs to keep a reference to the View in order to return it later. This means that no Views can be garbage collected and will significantly increase the memory used per session.  
+The difference between these, is that #1 will always give you a new instance of a View when you navigate to it, whereas #2 always returns the same instance. **Unless you have very compelling reasons to use #2, you should always use #1**. If you use #2, the Navigator needs to keep a reference to the View in order to return it later. This means that no Views can be garbage collected and so registering views this way will significantly increase the memory used per session.  
 
 If you have a case where you need the same instance to always be returned, you should defer the instantiation of that View until it is actually needed. This way you don't increase the initial startup time of your application. `LazyProvider` contains an example implementation of how to do this. 
 
@@ -95,7 +95,7 @@ When building your application, you usually want to add reasonable CSS classname
 
 When styling your application, try to stay away from writing selectors against any `.v-` prefixed classnames, as this will make your CSS more bound to the specific implementing class. So, instead of styling `.v-vertical-layout`, give your layout a meaningful name with `addStylename()` and write your selector for that. This way, you have more freedom in changing the implementing layout without affecting your styles. 
 
-Take advantage of the fact that Sass allows you to split up your stylesheets into separate files without incurring any runtime overhead. You will ussually want to keep styles for different views/components in separate files for easier maintenance. When compiled, all your CSS will be in one file. 
+Take advantage of the fact that Sass allows you to split up your stylesheets into separate files without incurring any runtime overhead. You will usually want to keep styles for different views/components in separate files for easier maintenance. When compiled, all your CSS will be in one file. 
 
 **Remember that you need to manually compile the SCSS before moving to production, as the automatic compilation is disabled in production mode!**
 
@@ -150,9 +150,11 @@ By creating our own fields, we can keep the main form simple, and we're able to 
 
 Unfortunately, validating forms in Vaadin is not very nice. If you attach a validator to a field, it will already tell the user there's an error before the user has even started filling in the form. 
 
-Improving the validation is fairly straight forward, but can get a bit tedious, so I created a helper found in `FieldGroupUtil.improveUX`. Calling this method will turn on live validation and make sure that we don't bug our users with validation errors before they've even tried to populate a field. 
+Improving the validation is a bit of work, so I created a helper found in `FieldGroupUtil.improveUX`. Calling this method will turn on live validation and make sure that we don't bug our users with validation errors before they've even tried to populate a field. 
 
 In addition, the utility will help improve UX by toggling the enabled state of your save/cancel buttons. The cancel button won't be active until a user has made a change to the form, and the save button will only be active once all validations pass.
+
+Please note that this is a slightly simplified solution to keep the code understandable, please refer to AbstractForm, MBeanFieldGroup, and MTextField in [Viritin](https://github.com/viritin/viritin) for a more complete solution.
 
 ## Design patterns
 
