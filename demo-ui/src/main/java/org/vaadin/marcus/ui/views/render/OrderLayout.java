@@ -15,6 +15,7 @@ public class OrderLayout extends CustomComponent {
         HorizontalLayout layout = new HorizontalLayout();
         panel.setContent(layout);
         setCompositionRoot(panel);
+        
         Label orderTime = new Label();
         VerticalLayout lineItemsLayout = new VerticalLayout();
         Label lineItemsCaption = new Label("Line items:");

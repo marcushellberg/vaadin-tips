@@ -20,6 +20,7 @@ public class LineItemField extends CustomField<List> {
 
     private Grid lineItemsGrid;
     private BeanItemContainer<LineItem> container;
+    private boolean spacing = true;
 
     public LineItemField(String caption) {
         setCaption(caption);
@@ -35,7 +36,7 @@ public class LineItemField extends CustomField<List> {
         rootLayout.addComponents(lineItemForm, lineItemsGrid);
 
         rootLayout.setWidth("100%");
-        rootLayout.setSpacing(true);
+        rootLayout.setSpacing(spacing);
 
         lineItemsGrid.setWidth("100%");
         container = new BeanItemContainer<>(LineItem.class, Lists.newArrayList());
@@ -64,7 +65,7 @@ public class LineItemField extends CustomField<List> {
         private Button addButton;
 
         public LineItemForm() {
-            setSpacing(true);
+            setSpacing(spacing);
             setWidth("100%");
 
             initLayout();

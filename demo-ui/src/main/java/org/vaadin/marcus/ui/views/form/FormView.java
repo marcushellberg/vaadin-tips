@@ -7,10 +7,10 @@ import com.vaadin.event.ShortcutAction;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
+import org.vaadin.marcus.entity.Order;
 import org.vaadin.marcus.ui.components.VerticalSpacedLayout;
 import org.vaadin.marcus.util.FieldGroupUtil;
 import org.vaadin.marcus.util.MyTheme;
-import org.vaadin.marcus.entity.Order;
 import org.vaadin.marcus.util.ViewConfig;
 
 @ViewConfig(uri = "form", displayName = "Form")
@@ -56,6 +56,8 @@ public class FormView extends VerticalSpacedLayout implements View {
 
         buttonsLayout.setExpandRatio(clear, 1);
         buttonsLayout.setComponentAlignment(clear, Alignment.TOP_RIGHT);
+
+
         return buttonsLayout;
     }
 

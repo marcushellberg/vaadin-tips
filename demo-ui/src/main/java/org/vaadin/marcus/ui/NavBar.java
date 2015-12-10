@@ -40,7 +40,8 @@ public class NavBar extends CssLayout implements ViewChangeListener {
     }
 
     public void addView(String uri, String displayName) {
-        Button viewButton = new Button(displayName, click -> EventBus.post(new NavigationEvent(uri)));
+        Button viewButton = new Button(displayName,
+                click -> EventBus.post(new NavigationEvent(uri)));
         viewButton.addStyleName(MyTheme.MENU_ITEM);
         viewButton.addStyleName(MyTheme.BUTTON_BORDERLESS);
         buttonMap.put(uri, viewButton);

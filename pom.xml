@@ -18,14 +18,13 @@
         <project.target.version>1.8</project.target.version>
         <project.encoding>UTF-8</project.encoding>
 
-        <vaadin.version>7.5.3</vaadin.version>
+        <vaadin.version>7.5.10</vaadin.version>
         <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
         <vaadin.charts.version>[2.0.0,)</vaadin.charts.version>
 
         <jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
         <mockito.version>1.9.5</mockito.version>
         <junit.version>4.11</junit.version>
-        <spreadsheet.version>1.0.2</spreadsheet.version>
     </properties>
 
 
@@ -103,7 +102,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-testbench</artifactId>
-                <version>4.0.2</version>
+                <version>4.0.3</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

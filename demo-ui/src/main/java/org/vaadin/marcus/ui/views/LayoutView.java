@@ -2,10 +2,7 @@ package org.vaadin.marcus.ui.views;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import org.vaadin.marcus.util.MyTheme;
 import org.vaadin.marcus.util.ViewConfig;
 

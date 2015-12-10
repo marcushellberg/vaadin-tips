@@ -37,14 +37,6 @@ public class DemoUI extends UI {
         }
     }
 
-    private void setupEventBus() {
-        eventBus = new EventBus((throwable, subscriberExceptionContext) -> {
-            // log error
-            throwable.printStackTrace();
-        });
-        eventBus.register(this);
-    }
-
     @Subscribe
     public void userLoggedIn(LoginEvent event) {
         CurrentUser.set(event.getUser());
@@ -63,6 +55,14 @@ public class DemoUI extends UI {
         VaadinSession.getCurrent().close();
         Page.getCurrent().reload();
 
+    }
+
+    private void setupEventBus() {
+        eventBus = new EventBus((throwable, subscriberExceptionContext) -> {
+            // log error
+            throwable.printStackTrace();
+        });
+        eventBus.register(this);
     }
 
     public static DemoUI getCurrent() {

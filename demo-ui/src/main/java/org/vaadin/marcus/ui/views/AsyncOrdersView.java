@@ -6,6 +6,7 @@ import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.ProgressBar;
 import org.vaadin.marcus.ui.components.OrdersGrid;
@@ -23,6 +24,7 @@ public class AsyncOrdersView extends VerticalSpacedLayout implements View {
     private OrderService orderService = OrderService.get();
     private OrdersGrid ordersTable;
     private ProgressBar progressBar;
+    private HorizontalLayout loadingNotificaton;
 
     public AsyncOrdersView() {
         setSizeFull();
@@ -33,17 +35,24 @@ public class AsyncOrdersView extends VerticalSpacedLayout implements View {
     private void createLayout() {
         Label header = new Label("Orders, asynchronous");
         ordersTable = new OrdersGrid();
-        progressBar = new ProgressBar();
-        addComponents(header, progressBar);
+        addComponent(header);
+        addLoadingNotification();
 
         header.addStyleName(MyTheme.LABEL_H1);
 
         ordersTable.setSizeFull();
 
-        progressBar.setIndeterminate(true);
-        progressBar.setCaption("Hang on, fetching orders...");
 
-        setComponentAlignment(progressBar, Alignment.TOP_CENTER);
+    }
+
+    private void addLoadingNotification() {
+        progressBar = new ProgressBar();
+        progressBar.setIndeterminate(true);
+        loadingNotificaton = new HorizontalLayout();
+        loadingNotificaton.setSpacing(true);
+        loadingNotificaton.addComponents(progressBar, new Label("Hang on, fetching orders..."));
+        addComponents(loadingNotificaton);
+        setComponentAlignment(loadingNotificaton, Alignment.TOP_CENTER);
     }
 
     @Override
@@ -73,7 +82,7 @@ public class AsyncOrdersView extends VerticalSpacedLayout implements View {
         //Note getUI() vs UI.getCurrent(). The latter is not accessible from the background thread.
         getUI().access(() -> {
             ordersTable.setContainer(new BeanItemContainer<>(Order.class, orders));
-            replaceComponent(progressBar, ordersTable);
+            replaceComponent(loadingNotificaton, ordersTable);
             setExpandRatio(ordersTable, 1);
             getUI().setPollInterval(-1);
         });
