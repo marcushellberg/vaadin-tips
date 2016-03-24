@@ -8,9 +8,9 @@ import org.junit.Test;
 import org.vaadin.marcus.ui.pageobjects.MainViewPO;
 import org.vaadin.marcus.ui.pageobjects.TBUtils;
 
-import static junit.framework.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-public class RenderingSpeedTest extends TestBenchTestCase {
+public class RenderingSpeedIT extends TestBenchTestCase {
 
     private MainViewPO mainViewPO;
 
@@ -25,6 +25,7 @@ public class RenderingSpeedTest extends TestBenchTestCase {
 
         int maxAllowedRenderTime = 1000;
         long renderTime = mainViewPO.testBench().timeSpentRenderingLastRequest();
+        // This fails on purpose here, the view is made to be slow for the demo
         assertTrue("Render took " + renderTime + "ms, max allowed is " + maxAllowedRenderTime + "ms", renderTime < maxAllowedRenderTime);
     }
 

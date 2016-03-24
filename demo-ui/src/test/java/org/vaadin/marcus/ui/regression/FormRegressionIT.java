@@ -13,7 +13,7 @@ import org.vaadin.marcus.ui.pageobjects.TBUtils;
 
 import static org.junit.Assert.assertTrue;
 
-public class FormRegressionTest extends TestBenchTestCase {
+public class FormRegressionIT extends TestBenchTestCase {
 
     private MainViewPO mainViewPO;
 

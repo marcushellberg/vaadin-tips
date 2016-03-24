@@ -30,7 +30,9 @@ public class OrderLayout extends CustomComponent {
         layout.setMargin(true);
         layout.setWidth("100%");
 
-        orderTime.setValue(order.getOrderTime().toString(DateTimeFormat.mediumDateTime()));
+        if(order.getOrderTime() != null) {
+            orderTime.setValue(order.getOrderTime().toString(DateTimeFormat.mediumDateTime()));
+        }
         orderTime.setSizeUndefined();
         orderTime.addStyleName(MyTheme.LABEL_BOLD);
 

@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TBUtils {
 
-    private static final String TARGET_URL = "http://localhost:8080/quicktickets-dashboard?restartApplication=true";
+    private static final String TARGET_URL = "http://localhost:8080/demo-ui/?restartApplication=true";
 
     public static LoginViewPO openInitialView() {
         WebDriver driver = TestBench.createDriver(new FirefoxDriver());
