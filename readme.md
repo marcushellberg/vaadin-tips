@@ -198,10 +198,13 @@ Note that by changing at what level you stub out the rest of the system, you can
 
 On top of the more low-level unit tests, it's good to write some broader regression tests to ensure that you don't break your app by mistake while working on something else. [Vaadin TestBench](https://vaadin.com/add-ons/testbench) is a tool that is built for creating regression tests for Vaadin apps. It will allow us to build tests that run our application through an actual browser. 
 
-`FormRegressionTest` shows an example of a test that fills in our order form and submits it. TestBench also allows us to measure performance. In `RenderingSpeedTest` we have built a test that ensures a view is rendered quicker than a given threshold. 
+`FormRegressionIT` shows an example of a test that fills in our order form and submits it. TestBench also allows us to measure performance. In `RenderingSpeedIT` we have built a test that ensures a view is rendered quicker than a given threshold. 
 
-**Note** Vaadin TestBench is a commercial add-on for Vaadin. You can obtain free licenses for non-profit use on our web page. There is also a 30 day trial available. In order to run the tests in this project you'll need to have [Firefox ESR](https://www.mozilla.org/en-US/firefox/organizations/all/) installed. 
+**Note** Vaadin TestBench is a commercial add-on for Vaadin. You can obtain free licenses for non-profit use on our web page. There is also a 30 day trial available. In order to run the tests in this project you'll need to have [Firefox ESR](https://www.mozilla.org/en-US/firefox/organizations/all/) installed.
 
+Note that integration tests are not typically executed all the time during development or basic development build - as the require a considerably more time than simple unit tests and they require you to have a server up and running. You can run integration tests as JUnit tests form your IDE (when you have the project running in a server). Alternatively you can execute them with Maven using "it" profile. That profile also starts and automatically deploys the application using a Jetty server. Typically you'd have this profile enabled in your CI server. The maven command that runs integration tests:
+
+mvn verify -Pit
 
 ## Optimization
 
