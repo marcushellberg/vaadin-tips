@@ -229,7 +229,7 @@ Again, please start with a simple solution and only optimize if you actually ide
 
 If the slowness is on the server, you'll want to use a profiler to see where in the code you're spending most time. Typically it will be in fetching data. You may want to consider asynchronous loading if the delay is very noticeable and you cannot optimize it by tweaking DB indexes or optimizing your service level code.
 
-You will also want to check on your application memory usage to keep things running smoothly in production. Download [VisualVM](https://visualvm.java.net/) and attach to your running server. See the difference in how memory is freed when changing how you instantiate your Views. Try changing the create mode of `HeapDestroyer` from LAZY to ALWAYS_NEW and you'll notice that the second option allows us to immediately free the memory once the user is no longer on the view. 
+You will also want to check on your application memory usage to keep things running smoothly in production. Download [VisualVM](https://visualvm.github.io/) and attach to your running server. See the difference in how memory is freed when changing how you instantiate your Views. Try changing the create mode of `HeapDestroyer` from LAZY to ALWAYS_NEW and you'll notice that the second option allows us to immediately free the memory once the user is no longer on the view. 
 
 ## Keep things simple, refactor constantly
 
